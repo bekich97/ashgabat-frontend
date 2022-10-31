@@ -25,8 +25,10 @@ export default function Home() {
   document.title = langs["Home"][lang] + " - " + langs["Ashgabat city municipality"][lang];
   const [threeLoading, setThreeLoading] = useState(true);
   const [tenLoading, setTenLoading] = useState(true);
+  const [topLoading, setTopLoading] = useState(true);
   const [threePosts, setThreePosts] = useState([]);
   const [tenPosts, setTenPosts] = useState([]);
+  const [topPosts, setTopPosts] = useState([]);
   const [notices, setNotices] = useState([]);
   const [thumbs, setThumbs] = useState([]);
   const [pop, setPop] = useState("news");
@@ -50,6 +52,13 @@ export default function Home() {
       })
       .finally(() => {
         setTenLoading(false);
+      });
+      PostService.getTopPosts()
+      .then((res) => {
+        setTopPosts(res.data);
+      })
+      .finally(() => {
+        setTopLoading(false);
       });
 
     noticeService.getNotices().then((res) => {
@@ -277,14 +286,14 @@ export default function Home() {
           {pop === "news" ? (
             <div className="row">
               <div className="col-12">
-                <h4 className="mb-4">{langs["Main contents"][lang]}</h4>
+                <h4 className="mb-4">{langs["Most read news"][lang]}</h4>
               </div>
-              {threeLoading ? (
+              {topLoading ? (
                 <div>
                   <PostCardPlaceholder />
                 </div>
               ) : (
-                threePosts.map((post) => {
+                topPosts.map((post) => {
                   return <PostCard key={post.id} post={post} />;
                 })
               )}

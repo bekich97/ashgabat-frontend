@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BACKEND_HOST } from "../consts";
 import PostDate from "./PostDate";
 import { useSelector } from "react-redux";
+import * as Icon from "react-bootstrap-icons";
 
 export default function PostCardWithImg({ post }) {
   const lang = useSelector(state => state.mainSlice.lang);
@@ -27,7 +28,12 @@ export default function PostCardWithImg({ post }) {
         <Link to={`/posts/${post.id}`} className="underline-animation-on-hover post-title">
           {truncate(lang === 'en' ? post.name_en : lang === 'ru' ? post.name_ru : post.name_tm, 70)}
         </Link>
-        <PostDate date={post.pub_date} />
+        <div className="footer-wrapper" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+          <PostDate date={post.pub_date} />
+          <div style={{color: "#999999"}}>
+            <Icon.Eye style={{margin: "0 0 0 30x"}} /> {post.views}
+          </div>
+        </div>
       </div>
     </div>
   );

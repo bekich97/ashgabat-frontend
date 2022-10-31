@@ -20,6 +20,10 @@ class PostService {
         return axios.get(POST_API_BASE_URL + 'ten-posts/');
     }
 
+    getTopPosts(){
+        return axios.get(POST_API_BASE_URL + 'top-posts/');
+    }
+
     getThreePosts(){
         return axios.get(POST_API_BASE_URL + 'three-posts/');
     }

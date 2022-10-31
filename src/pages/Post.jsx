@@ -8,6 +8,7 @@ import { BACKEND_HOST } from '../consts';
 import { langs } from '../langs/langs';
 import { useSelector } from 'react-redux';
 import PostCardPlaceholder from "../components/PostCardPlaceholder";
+import * as Icon from "react-bootstrap-icons";
 
 export default function Post() {
     const [loading, setLoading] = useState(true);
@@ -73,7 +74,10 @@ export default function Post() {
                     <div className='col-md-8 col-sm-12 post-left content-wrapper'>
                         <h4>{ lang === 'en' ? post.name_en : lang === 'ru' ? post.name_ru : post.name_tm }</h4>
                         <div className='date-share-wrapper'>
-                            <PostDate date={ post.pub_date } />
+                            <div className='lefter'>
+                                <PostDate date={ post.pub_date } /> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <Icon.Eye /> {post.views}
+                            </div>
                             <div className='btn share d-flex'>
                                 {
                                     post.is_main ?

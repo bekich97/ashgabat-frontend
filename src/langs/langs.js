@@ -439,6 +439,11 @@ export const langs = {
         "ru": "Сегодня",
         "en": "Today"
     },
+    "Most read news": {
+        "tm": "Köp okalan habarlar",
+        "ru": "Самые читаемые новости",
+        "en": "Most read news"
+    },
     "": {
         "tm": "",
         "ru": "",
