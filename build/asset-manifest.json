@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.96b5b8f0.css",
-    "main.js": "/static/js/main.7c60f294.js",
+    "main.js": "/static/js/main.053387cf.js",
     "static/media/phones.png": "/static/media/phones.14b5729c52e1208a5bb6.png",
     "static/media/Gilroy-Regular.ttf": "/static/media/Gilroy-Regular.5b89a8df3b17dccdb73f.ttf",
     "static/media/bottom-kesh.png": "/static/media/bottom-kesh.949d8252effcea31830a.png",
@@ -11,10 +11,10 @@
     "static/media/logo.png": "/static/media/logo.e3a1d6cac660fa9c0463.png",
     "index.html": "/index.html",
     "main.96b5b8f0.css.map": "/static/css/main.96b5b8f0.css.map",
-    "main.7c60f294.js.map": "/static/js/main.7c60f294.js.map"
+    "main.053387cf.js.map": "/static/js/main.053387cf.js.map"
   },
   "entrypoints": [
     "static/css/main.96b5b8f0.css",
-    "static/js/main.7c60f294.js"
+    "static/js/main.053387cf.js"
   ]
 }

@@ -15,7 +15,7 @@ export default function PostCard({ post }) {
             <Link to={`/posts/${post.id}`} className='underline-animation-on-hover post-title'>{truncate(lang === 'en' ? post.name_en : lang === 'ru' ? post.name_ru : post.name_tm, 70)}</Link>
             <div className="footer-wrapper" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
               <PostDate date={post.pub_date} />
-              <div style={{color: "#999999"}}>
+              <div style={{color: "#999999", display: "none"}}>
                 <Icon.Eye style={{margin: "0 0 0 30x"}} /> {post.views}
               </div>
             </div>
