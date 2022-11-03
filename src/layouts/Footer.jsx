@@ -55,7 +55,7 @@ export default function Footer() {
                                 <div className='col-md-4 col-sm-6 col-xs-12'>
                                     <h6>{langs["Home"][lang]}</h6>
                                     <ul>
-                                        <li><Link to="/">Esasy habarlar</Link></li>
+                                        <li><Link to="/">{langs["Main contents"][lang]}</Link></li>
                                         <li><Link to='/posts/cat/0'>{langs["All news"][lang]}</Link></li>
                                         <li><Link to='/voucher-doc'>{langs["Application procedure"][lang]}</Link></li>
                                         <li><Link to='/voucher'>{langs["Electronic Application"][lang]}</Link></li>

@@ -16,13 +16,13 @@ export const langs = {
     },
     "Ashgabat city municipality": {
         "tm": "Aşgabat şäher häkimligi",
-        "ru": "Ашхабадский муниципалитет",
-        "en": "Ashgabat city municipality"
+        "ru": "Хякимлик города Ашхабад",
+        "en": "Hyakimlik of Ashgabat"
     },
     "Main contents": {
-        "tm": "Esasy habarlar",
-        "ru": "Основная информация",
-        "en": "Main contents"
+        "tm": "Baş sahypa",
+        "ru": "Главная",
+        "en": "Home"
     },
     "All news": {
         "tm": "Ähli habarlar",
@@ -31,18 +31,18 @@ export const langs = {
     },
     "Application": {
         "tm": "Ýüz tutma",
-        "ru": "Обращения",
+        "ru": "Обращение",
         "en": "Application"
     },
     "Application procedure": {
         "tm": "Ýüz tutmagyň tertibi",
-        "ru": "Порядок обращение",
+        "ru": "Порядок обращения",
         "en": "Application procedure"
     },
     "Electronic Application": {
-        "tm": "Elektron ýüz tutma",
-        "ru": "Электронные обращения",
-        "en": "Electronic Application"
+        "tm": "Onlaýn ýüz tutma",
+        "ru": "Онлайн обращение",
+        "en": "Online application"
     },
     "About us": {
         "tm": "Biz barada",
@@ -51,38 +51,38 @@ export const langs = {
     },
     "Others": {
         "tm": "Beýlekiler",
-        "ru": "Прочие",
-        "en": "Others"
+        "ru": "Другие",
+        "en": "More"
     },
     "Information": {
         "tm": "Maglumatlar",
-        "ru": "Сведения",
+        "ru": "Информации",
         "en": "Information"
     },
     "Images": {
         "tm": "Suratlar",
         "ru": "Фотографии",
-        "en": "Images"
+        "en": "Photos"
     },
     "Videos": {
-        "tm": "Wideo ýazgylary",
-        "ru": "Видеозапись",
-        "en": "Videos"
+        "tm": "Wideo",
+        "ru": "Видео",
+        "en": "Video"
     },
     "Events": {
         "tm": "Çäreler",
-        "ru": "Операции",
+        "ru": "Мероприятия",
         "en": "Events"
     },
     "Notices": {
         "tm": "Bildirişler",
         "ru": "Объявления",
-        "en": "Notices"
+        "en": "Announcment"
     },
     "Digital service": {
-        "tm": "Sanly hyzmat",
-        "ru": "Цифровой сервис",
-        "en": "Digital service"
+        "tm": "Sanly hyzmatlar",
+        "ru": "Онлайн услуги",
+        "en": "Online services"
     },
     "Search": {
         "tm": "Gözleg",
@@ -155,7 +155,7 @@ export const langs = {
         "en": "All notices"
     },
     "Gallery": {
-        "tm": "Galereýa",
+        "tm": "Suratlar",
         "ru": "Галерея",
         "en": "Gallery"
     },
@@ -165,8 +165,8 @@ export const langs = {
         "en": "Video"
     },
     "All gallery": {
-        "tm": "Ähli galereýa",
-        "ru": "Все галерея",
+        "tm": "Ähli suratlar",
+        "ru": "Вся галерея",
         "en": "All gallery"
     },
     "Branches in Ashgabat": {
@@ -221,8 +221,8 @@ export const langs = {
     },
     "Actions": {
         "tm": "Amallar",
-        "ru": "Действия",
-        "en": "Actions"
+        "ru": "Процессы",
+        "en": "Processes"
     },
     "Download": {
         "tm": "Ýüklemek",
@@ -275,9 +275,9 @@ export const langs = {
         "en": "Something is wrong! All fields are required!"
     },
     "Reason for application": {
-        "tm": "Ýüz tutmagyň sebäbi",
-        "ru": "Причина подачи заявки",
-        "en": "Reason for application"
+        "tm": "Ýüz tutmagyňyzyň sebäbini giriziň",
+        "ru": "Причина обращения",
+        "en": "Reason of Appeal"
     },
     "Your name": {
         "tm": "Adyňyz",
@@ -377,7 +377,7 @@ export const langs = {
     "Districts": {
         "tm": "Etraplar",
         "ru": "Этрапы",
-        "en": "Districts"
+        "en": "Etraps"
     },
     "Table": {
         "tm": "Jedwel",
@@ -390,9 +390,9 @@ export const langs = {
         "en": "Map"
     },
     "Check the status of the filter": {
-        "tm": "Ýüztutmanyň ýagdaýyny barlamak",
-        "ru": "Проверить состояние фильтра",
-        "en": "Check the status of the filter"
+        "tm": "Ýüz tutmanyň ýagdaýyny barlamak",
+        "ru": "Мониторинг обращения",
+        "en": "Monitoring the appeal"
     },
     "Enter your tracking number!": {
         "tm": "Ýüztutma belgiňizi giriziň!",
@@ -421,8 +421,8 @@ export const langs = {
     },
     "Check voucher status": {
         "tm": "Ýüztutmanyň ýagdaýyny barlamak",
-        "ru": "Проверить статус ваучера",
-        "en": "Check voucher status"
+        "ru": "Мониторинг обращения",
+        "en": "Monitoring the appeal"
     },
     "Our site uses a technical data collection service to provide you with the best possible service. By continuing to use our site, you automatically agree to use this service.": {
         "tm": "Size iň gowy hyzmatlary hödürlemek üçin saýtymyzda tehniki maglumatlary ýygnamak hyzmaty ulanylýar. Saýtymyzy ulanmagy dowam etdirmek bilen, bu hyzmaty ulanmaga awtomatiki razylyk berýärsiňiz.",
@@ -441,8 +441,8 @@ export const langs = {
     },
     "Most read news": {
         "tm": "Köp okalan habarlar",
-        "ru": "Самые читаемые новости",
-        "en": "Most read news"
+        "ru": "Актуальные новости",
+        "en": "Latest news"
     },
     "": {
         "tm": "",
