@@ -163,9 +163,12 @@ export default function Home() {
                           <div className='row'>
                               {
                                   thumbs.map((image, index) => {
-                                      return <div key={index} className='col-4'>
+                                    return index < 6 ?
+                                      <div key={index} className='col-4'>
                                           <div className='bg-image' onClick={ () => openImageViewer(index) } style={{backgroundImage: `url(${(image)})`}}></div>
                                       </div>
+                                      :
+                                      ""
                                   })
                               }
                               {isViewerOpen && (

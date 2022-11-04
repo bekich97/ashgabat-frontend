@@ -190,9 +190,6 @@ export default function Header() {
                     </div>
                   </ul>
                 </li>
-                <li className={(getCurrentRoute() === "/about") ? "active" : ""}>
-                  <Link to="/about">{langs["About us"][lang]}</Link>
-                </li>
                 <li className={(getCurrentRoute() === "/documents" || getCurrentRoute() === "/images" || getCurrentRoute() === "/videos" || getCurrentRoute() === "/events" || getCurrentRoute() === "/notices") ? "outer-li active" : "outer-li"}>
                   <span>{langs["Others"][lang]}</span>
                   <ul className="inner-menu">
@@ -230,6 +227,9 @@ export default function Header() {
                 </li>
                 <li className={(getCurrentRoute() === "/duralga" ? "active" : "") + " duralga-outer-others"}>
                   <Link to="/duralga">{langs["Stop"][lang]}</Link>
+                </li>
+                <li className={(getCurrentRoute() === "/about") ? "active" : ""}>
+                  <Link to="/about">{langs["Contacts"][lang]}</Link>
                 </li>
               </ul>
             </div>

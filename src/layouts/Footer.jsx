@@ -53,13 +53,14 @@ export default function Footer() {
                         <div className='col-md-8 col-12 right'>
                             <div className='row'>
                                 <div className='col-md-4 col-sm-6 col-xs-12'>
-                                    <h6>{langs["Home"][lang]}</h6>
+                                    <h6>{langs["Pages"][lang]}</h6>
                                     <ul>
                                         <li><Link to="/">{langs["Main contents"][lang]}</Link></li>
-                                        <li><Link to='/posts/cat/0'>{langs["All news"][lang]}</Link></li>
-                                        <li><Link to='/voucher-doc'>{langs["Application procedure"][lang]}</Link></li>
+                                        <li><Link to='/posts/cat/0'>{ lang === 'en' ? "All news" : lang === 'ru' ? "Все новости" : "Ähli habarlar" }</Link></li>
                                         <li><Link to='/voucher'>{langs["Electronic Application"][lang]}</Link></li>
-                                        <li><Link to="/about">{langs["About us"][lang]}</Link></li>
+                                        <li><Link to="/taxi">{langs["Online taxi"][lang]}</Link></li>
+                                        <li><Link to="/duralga">{langs["Stop"][lang]}</Link></li>
+                                        <li><Link to="/about">{langs["Contacts"][lang]}</Link></li>
                                     </ul>
                                 </div>
                                 <div className='col-md-4 col-sm-6 col-xs-12'>

@@ -25,9 +25,9 @@ export const langs = {
         "en": "Home"
     },
     "All news": {
-        "tm": "Ähli habarlar",
-        "ru": "Все новости",
-        "en": "All news"
+        "tm": "Ählisi",
+        "ru": "Подробнее",
+        "en": "More"
     },
     "Application": {
         "tm": "Ýüz tutma",
@@ -150,12 +150,12 @@ export const langs = {
         "en": "Dec"
     },
     "All notices": {
-        "tm": "Ähli bildirişler",
-        "ru": "Все уведомления",
-        "en": "All notices"
+        "tm": "Ählisi",
+        "ru": "Подробнее",
+        "en": "More"
     },
     "Gallery": {
-        "tm": "Suratlar",
+        "tm": "Galereýa",
         "ru": "Галерея",
         "en": "Gallery"
     },
@@ -165,9 +165,9 @@ export const langs = {
         "en": "Video"
     },
     "All gallery": {
-        "tm": "Ähli suratlar",
-        "ru": "Вся галерея",
-        "en": "All gallery"
+        "tm": "Ählisi",
+        "ru": "Подробнее",
+        "en": "More"
     },
     "Branches in Ashgabat": {
         "tm": "Aşgabatdaky bölümler",
@@ -340,9 +340,9 @@ export const langs = {
         "en": "Online taxi"
     },
     "Stop": {
-        "tm": "Duralga",
-        "ru": "Duralga",
-        "en": "Duralga"
+        "tm": "Şaher içi ugurlar",
+        "ru": "Внутригородские маршруты",
+        "en": "Internal routes"
     },
     "Please enter your phone number correctly!": {
         "tm": "Telefon belgiňizi dogry giriziň!",
@@ -444,9 +444,14 @@ export const langs = {
         "ru": "Актуальные новости",
         "en": "Latest news"
     },
-    "": {
-        "tm": "",
-        "ru": "",
-        "en": ""
+    "Contacts": {
+        "tm": "Habarlaşmak",
+        "ru": "Контакты",
+        "en": "Contacts"
+    },
+    "Pages": {
+        "tm": "Sahypalar",
+        "ru": "Страницы",
+        "en": "Pages"
     }
 }
