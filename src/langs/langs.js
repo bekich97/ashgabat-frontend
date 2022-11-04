@@ -196,7 +196,7 @@ export const langs = {
     },
     "Our address": {
         "tm": "Biziň salgymyz",
-        "ru": "Наш адресс",
+        "ru": "Наш адрес",
         "en": "Our address"
     },
     "Address": {
