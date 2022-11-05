@@ -11,7 +11,8 @@ export default function Duralga() {
   const [table, setTable] = useState('');
   useEffect(() => {
     InformationService.getInformations().then((res) => {
-      setTable(res.data["duralga_table"]);
+      console.log(res.data);
+      setTable(res.data);
     });
   }, []);
   return (
@@ -33,10 +34,10 @@ export default function Duralga() {
             <div className="col-12 duralga-page">
               <Tabs defaultActiveKey="table" className="mb-3">
                   <Tab eventKey="table" title={langs["Table"][lang]}>
-                  <div className='table-holder' dangerouslySetInnerHTML={{__html:(table)}} />
+                  <div className='table-holder' dangerouslySetInnerHTML={{__html:(lang === 'en' && table.duralga_table_en ? table.duralga_table_en : lang === 'ru' && table.duralga_table_ru ? table.duralga_table_ru : table.duralga_table)}} />
                   </Tab>
                   <Tab eventKey="map" title={langs["Map"][lang]}>
-                    <iframe src="http://duralga.gov.tm/" style={{width: '100%', height: '800px'}}></iframe>
+                    <iframe src="http://duralga.gov.tm/" style={{width: '100%', height: '800px'}} title="duralga-map"></iframe>
                   </Tab>
                 </Tabs>
             </div>
