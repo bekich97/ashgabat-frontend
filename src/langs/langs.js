@@ -51,17 +51,17 @@ export const langs = {
     },
     "Others": {
         "tm": "Beýlekiler",
-        "ru": "Другие",
+        "ru": "Ещё",
         "en": "More"
     },
     "Information": {
         "tm": "Maglumatlar",
-        "ru": "Информации",
+        "ru": "Информация",
         "en": "Information"
     },
     "Images": {
         "tm": "Suratlar",
-        "ru": "Фотографии",
+        "ru": "Фотография",
         "en": "Photos"
     },
     "Videos": {

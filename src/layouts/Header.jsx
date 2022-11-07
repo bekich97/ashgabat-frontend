@@ -158,7 +158,7 @@ export default function Header() {
                       <div className="row">
                         <div className="col-12">
                           <li>
-                            <Link to='/posts/cat/0'>{langs["All news"][lang]}</Link>
+                            <Link to='/posts/cat/0'>{ lang === 'en' ? "All news" : lang === 'ru' ? "Все новости" : "Ähli täzelikler" }</Link>
                           </li>
                           {
                             categories.map(category => {
