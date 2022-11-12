@@ -30,11 +30,21 @@ import Videos from './pages/Videos';
 import Taxi from './pages/Taxi';
 import Duralga from './pages/Duralga';
 import CheckVoucher from './pages/CheckVoucher';
+import ScrollToTop from './components/ScrollToTop';
+
+import TagManager from 'react-gtm-module';
+
+const tagManagerArgs = {
+  gtmId: 'GTM-MNZV4JH'
+}
+
+TagManager.initialize(tagManagerArgs)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
