@@ -36,9 +36,9 @@ export default function Duralga() {
                   <Tab eventKey="table" title={langs["Table"][lang]}>
                   <div className='table-holder' dangerouslySetInnerHTML={{__html:(lang === 'en' && table.duralga_table_en ? table.duralga_table_en : lang === 'ru' && table.duralga_table_ru ? table.duralga_table_ru : table.duralga_table)}} />
                   </Tab>
-                  <Tab eventKey="map" title={langs["Map"][lang]}>
+                  {/* <Tab eventKey="map" title={langs["Map"][lang]}>
                     <iframe src="http://duralga.gov.tm/" style={{width: '100%', height: '800px'}} title="duralga-map"></iframe>
-                  </Tab>
+                  </Tab> */}
                 </Tabs>
             </div>
           </div>

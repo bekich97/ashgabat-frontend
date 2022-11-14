@@ -340,7 +340,7 @@ export const langs = {
         "en": "Online taxi"
     },
     "Stop": {
-        "tm": "Şaher içi ugurlar",
+        "tm": "Şäher içi ugurlar",
         "ru": "Внутригородские маршруты",
         "en": "Internal routes"
     },

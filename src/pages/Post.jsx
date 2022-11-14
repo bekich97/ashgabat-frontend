@@ -83,14 +83,16 @@ export default function Post() {
                                     post.is_main ?
                                     <a href={BACKEND_HOST + "/rss/posts/main-posts/feed"} target="_blank" rel="noreferrer" className='rss-link'>
                                         <div className='one-social-btn'>
-                                            <img src={require("./../assets/img/rss.png")} alt="RSS" style={{width: '22px', marginRight: '8px', marginTop: '-4px'}} />
+                                            {/* <img src={require("./../assets/img/rss.png")} alt="RSS" style={{width: '22px', marginRight: '8px', marginTop: '-4px'}} /> */}
+                                            <Icon.Rss style={{color: 'black', fontSize: '18px', marginRight: '5px'}} />
                                             {langs["Main contents"][lang]}
                                         </div>
                                     </a>
                                     :
                                     <a href={BACKEND_HOST + "/rss/posts/latest-posts/feed"} target="_blank" rel="noreferrer" className='rss-link'>
                                         <div className='one-social-btn'>
-                                            <img src={require("./../assets/img/rss.png")} alt="RSS" style={{width: '22px', marginRight: '8px', marginTop: '-4px'}} />
+                                            {/* <img src={require("./../assets/img/rss.png")} alt="RSS" style={{width: '22px', marginRight: '8px', marginTop: '-4px'}} /> */}
+                                            <Icon.Rss style={{color: 'black', fontSize: '18px', marginRight: '5px'}} />
                                             {langs["News feed"][lang]}
                                         </div>
                                     </a>

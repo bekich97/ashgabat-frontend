@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { langs } from '../langs/langs';
 import { Link } from 'react-router-dom';
 import { BACKEND_HOST } from '../consts';
+import * as Icon from 'react-bootstrap-icons';
 
 export default function Footer() {
     const [categories, setCategories] = useState([]);
@@ -105,7 +106,8 @@ export default function Footer() {
                     <div className='col-12 py-2'>
                         <p className='mb-0 text-center'>
                             <a href={BACKEND_HOST + "/rss/posts/latest-posts/feed"} target="_blank" rel="noreferrer">
-                                <img src={require("./../assets/img/rss.png")} alt="RSS" style={{width: '22px', marginRight: '10px', marginTop: '-4px'}} />
+                                {/* <img src={require("./../assets/img/rss.png")} alt="RSS" style={{width: '22px', marginRight: '10px', marginTop: '-4px'}} /> */}
+                                <Icon.Rss style={{color: 'black', fontSize: '18px', marginRight: '5px'}} />
                             </a>
                             &copy; {today.getFullYear()} {langs["All rights reserved"][lang]}
                             {/* &nbsp;&nbsp;<a style={{textDecoration: 'none'}} href={require("./../assets/img/privacy.pdf")} target="_blank" rel="noreferrer">{langs["Privacy Policy"][lang]}</a> */}
