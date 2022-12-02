@@ -6,6 +6,7 @@ import CategoryPostPlaceholder from '../components/CategoryPostPlaceholder';
 import { langs } from '../langs/langs';
 import { useSelector } from 'react-redux';
 import * as Icon from 'react-bootstrap-icons';
+import { Helmet } from 'react-helmet';
 
 export default function CategoryPosts() {
     const [loading, setLoading] = useState(true);
@@ -13,7 +14,7 @@ export default function CategoryPosts() {
     const [posts, setPosts] = useState({});
     const params = useParams();
     const lang = useSelector(state => state.mainSlice.lang);
-    document.title = langs["News"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["News"][lang] + " - " + langs["Ashgabat city municipality"][lang];
     const [page, setPage] = useState(1);
     
     useEffect(() => {
@@ -42,6 +43,12 @@ export default function CategoryPosts() {
 
   return (
     <div className='category-posts page-wrapper shadowly-border container'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["News"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='row'>
             <div className='col-12'>
                 <div className='page-title-wrapper'>

@@ -6,11 +6,12 @@ import { BACKEND_HOST } from '../consts';
 import VideoService from '../services/VideoService';
 import { langs } from '../langs/langs';
 import ReklamaV from '../components/ReklamaV';
+import { Helmet } from 'react-helmet';
 
 export default function Videos() {
     const [videos, setVideos] = useState([]);
     const lang = useSelector((state) => state.mainSlice.lang);
-    document.title = langs["Videos"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Videos"][lang] + " - " + langs["Ashgabat city municipality"][lang];
 
     useEffect(() => {
         VideoService.getVideos().then((res) => {
@@ -19,6 +20,12 @@ export default function Videos() {
     }, []);
   return (
     <div className='Videos page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Videos"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
             <div className='container'>
                 <div className='row'>

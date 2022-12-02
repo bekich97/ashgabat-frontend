@@ -19,10 +19,11 @@ import { langs } from "../langs/langs";
 import { useSelector } from "react-redux";
 import ImageViewer from 'react-simple-image-viewer';
 import ReklamaH from "../components/ReklamaH";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   const lang = useSelector(state => state.mainSlice.lang);
-  document.title = langs["Home"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+  // document.title = langs["Home"][lang] + " - " + langs["Ashgabat city municipality"][lang];
   const [threeLoading, setThreeLoading] = useState(true);
   const [tenLoading, setTenLoading] = useState(true);
   const [topLoading, setTopLoading] = useState(true);
@@ -97,6 +98,12 @@ export default function Home() {
 
   return (
     <div className="container page-main-container page-wrapper">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{langs["Home"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+        <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+        <link rel="canonical" href={window.location.href} />
+      </Helmet>
       <div className="row">
         <div
           className="col-md-9 col-sm-12 no-p"

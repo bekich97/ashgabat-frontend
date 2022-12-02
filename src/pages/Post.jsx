@@ -9,6 +9,7 @@ import { langs } from '../langs/langs';
 import { useSelector } from 'react-redux';
 import PostCardPlaceholder from "../components/PostCardPlaceholder";
 import * as Icon from "react-bootstrap-icons";
+import { Helmet } from 'react-helmet';
 
 export default function Post() {
     const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ export default function Post() {
     let params = useParams();
     const id = params.id;
     const lang = useSelector((state) => state.mainSlice.lang);
-    document.title = langs["News"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["News"][lang] + " - " + langs["Ashgabat city municipality"][lang];
 
     useEffect(() => {
         PostService.getPostById(id).then((res) => {
@@ -38,6 +39,12 @@ export default function Post() {
     }, []);
   return (
     <div className='post-page page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{lang === 'en' ? post.name_en : lang === 'ru' ? post.name_ru : post.name_tm + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={lang === 'en' ? post.name_en : lang === 'ru' ? post.name_ru : post.name_tm} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
             <div className='container'>
                 <div className='row'>

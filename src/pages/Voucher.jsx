@@ -11,6 +11,7 @@ import validator from "validator";
 import { useNavigate } from "react-router-dom";
 import ApiService from "../services/ApiService";
 import { setNextpath, setVerified } from "../stores/mainSlice";
+import { Helmet } from "react-helmet";
 
 export default function Voucher() {
   const verified = useSelector((state) => state.mainSlice.verified);
@@ -21,7 +22,7 @@ export default function Voucher() {
     if (!verified) {
       navigate('/verify');
     }
-  }, []);
+  }, [verified, navigate]);
 
   const [regions, setRegions] = useState([]);
   const [reasons, setReasons] = useState([]);
@@ -42,7 +43,7 @@ export default function Voucher() {
   const [responseSuccess, setResponseSuccess] = useState(false);
   const lang = useSelector((state) => state.mainSlice.lang);
   const [alert, setAlert] = useState("");
-  document.title = langs["Application"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+  // document.title = langs["Application"][lang] + " - " + langs["Ashgabat city municipality"][lang];
   const btn = React.useRef();
 
   const handleUpload = () => {
@@ -67,7 +68,7 @@ export default function Voucher() {
         navigate('/verify')
       }
     });
-  }, []);
+  }, [navigate]);
 
   const handlePhoneChange = (e) => {
     if (e.length === 0){
@@ -202,6 +203,12 @@ export default function Voucher() {
 
   return (
     <div className="verify-page page-wrapper container shadowly-border">
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Application"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
       <div className="page-title-wrapper">
         <div className="container">
           <div className="row">

@@ -4,10 +4,11 @@ import { langs } from "../langs/langs";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import InformationService from "../services/InformationService";
+import { Helmet } from "react-helmet";
 
 export default function Duralga() {
   const lang = useSelector((state) => state.mainSlice.lang);
-  document.title = langs["Stop"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+  // document.title = langs["Stop"][lang] + " - " + langs["Ashgabat city municipality"][lang];
   const [table, setTable] = useState('');
   useEffect(() => {
     InformationService.getInformations().then((res) => {
@@ -17,6 +18,12 @@ export default function Duralga() {
   }, []);
   return (
     <div className="About page-wrapper container shadowly-border">
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Stop"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
       <div className="page-title-wrapper">
         <div className="container">
           <div className="row">

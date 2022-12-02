@@ -7,11 +7,12 @@ import { BACKEND_HOST } from "../consts";
 import Table from 'react-bootstrap/Table';
 import * as Icon from 'react-bootstrap-icons';
 import ReklamaV from '../components/ReklamaV';
+import { Helmet } from 'react-helmet';
 
 export default function Documents() {
     const [documents, setDocuments] = useState([]);
     const lang = useSelector((state) => state.mainSlice.lang);
-    document.title = langs["Information"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Information"][lang] + " - " + langs["Ashgabat city municipality"][lang];
 
     useEffect(() => {
         FileService.getFiles().then((res) => {
@@ -20,6 +21,12 @@ export default function Documents() {
     }, []);
   return (
     <div className='Documents page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Information"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
                 <div className='container'>
                     <div className='row'>

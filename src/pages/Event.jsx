@@ -6,13 +6,14 @@ import ContentLoader from 'react-content-loader';
 import { BACKEND_HOST } from '../consts';
 import { langs } from '../langs/langs';
 import { useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 export default function Event() {
     const [loading, setLoading] = useState(true);
     const [event, setEvent] = useState({});
     const params = useParams();
     const lang = useSelector((state) => state.mainSlice.lang);
-    document.title = langs["Events"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Events"][lang] + " - " + langs["Ashgabat city municipality"][lang];
 
     useEffect(() => {
         EventService.getEvent(params.id).then((res) => {
@@ -23,6 +24,12 @@ export default function Event() {
     }, [params.id]);
   return (
     <div className='post-page page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Events"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
             <div className='container'>
                 <div className='row'>

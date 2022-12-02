@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import { langs } from "../langs/langs";
 import StaticService from "../services/StaticService";
 import ReklamaV from "../components/ReklamaV";
+import { Helmet } from "react-helmet";
 
 export default function Taxi() {
   const lang = useSelector((state) => state.mainSlice.lang);
   const [data, setData] = useState({});
-  document.title = langs["Online taxi"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+  // document.title = langs["Online taxi"][lang] + " - " + langs["Ashgabat city municipality"][lang];
   useEffect(() => {
     StaticService.getStatic('taxi').then((res) => {
         setData(res.data);
@@ -16,6 +17,12 @@ export default function Taxi() {
   }, []);
   return (
     <div className="About page-wrapper container shadowly-border">
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Online taxi"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
       <div className="page-title-wrapper">
         <div className="container">
           <div className="row">

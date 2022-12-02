@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ApiService from '../services/ApiService';
 import { useNavigate } from 'react-router-dom';
 import { setOtp } from '../stores/mainSlice';
+import { Helmet } from 'react-helmet';
 
 export default function Verify() {
     const [phone, setPhone] = useState("");
@@ -17,7 +18,7 @@ export default function Verify() {
     const [myCaptcha, setMyCaptcha] = useState("");
     const [reload, setReload] = useState(false);
     const lang = useSelector(state => state.mainSlice.lang);
-    document.title = langs["Application formalize"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Application formalize"][lang] + " - " + langs["Ashgabat city municipality"][lang];
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -87,6 +88,12 @@ export default function Verify() {
 
   return (
     <div className='verify-page page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Application formalize"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
             <div className='container'>
                 <div className='row'>
@@ -118,7 +125,7 @@ export default function Verify() {
                             </Form.Control.Feedback>
                         </InputGroup>
                         <div className='captcha-wrapper'>
-                          <img src={`data:image/jpeg;base64,${myCaptcha}`} />
+                          <img src={`data:image/jpeg;base64,${myCaptcha}`} alt="captcha" />
                           <button className="app-btn reload" onClick={() => setReload(!reload)}>
                             <Icon.ArrowClockwise />
                           </button>

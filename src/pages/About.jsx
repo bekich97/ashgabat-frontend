@@ -5,10 +5,11 @@ import { YMaps, Map } from "react-yandex-maps";
 import { langs } from "../langs/langs";
 import InformationService from "../services/InformationService";
 import ReklamaV from "../components/ReklamaV";
+import { Helmet } from "react-helmet";
 
 export default function About() {
   const lang = useSelector((state) => state.mainSlice.lang);
-  document.title = langs["About us"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+  // document.title = langs["About us"][lang] + " - " + langs["Ashgabat city municipality"][lang];
   const [info, setInfo] = useState({});
   useEffect(() => {
     InformationService.getInformations().then((res) => {
@@ -17,6 +18,12 @@ export default function About() {
   }, []);
   return (
     <div className="About page-wrapper container shadowly-border">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{langs["About us"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+        <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+        <link rel="canonical" href={window.location.href} />
+      </Helmet>
       <div className="page-title-wrapper">
         <div className="container">
           <div className="row">

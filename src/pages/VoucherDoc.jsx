@@ -5,11 +5,12 @@ import { useSelector } from "react-redux";
 import { useEffect } from 'react';
 import StaticService from '../services/StaticService';
 import ReklamaV from '../components/ReklamaV';
+import { Helmet } from 'react-helmet';
 
 const VoucherDoc = () => {
     const [data, setData] = useState({});
     const lang = useSelector((state) => state.mainSlice.lang);
-    document.title = langs["Application procedure"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Application procedure"][lang] + " - " + langs["Ashgabat city municipality"][lang];
     
     useEffect(() => {
         StaticService.getStatic('voucher-procedure').then((res) => {
@@ -19,6 +20,12 @@ const VoucherDoc = () => {
 
     return (
         <div className='VoucherDoc page-wrapper container shadowly-border'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{langs["Application procedure"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+                <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+                <link rel="canonical" href={window.location.href} />
+            </Helmet>
             <div className='page-title-wrapper'>
                 <div className='container'>
                     <div className='row'>

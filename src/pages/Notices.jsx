@@ -5,11 +5,12 @@ import noticeService from '../services/noticeService';
 import { langs } from '../langs/langs';
 import NoticeCard from '../components/NoticeCard';
 import ReklamaV from '../components/ReklamaV';
+import { Helmet } from 'react-helmet';
 
 export default function Notices() {
     const [notices, setNotices] = useState([]);
     const lang = useSelector((state) => state.mainSlice.lang);
-    document.title = langs["Notices"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Notices"][lang] + " - " + langs["Ashgabat city municipality"][lang];
 
     useEffect(() => {
         noticeService.getNotices().then((res) => {
@@ -18,6 +19,12 @@ export default function Notices() {
     }, []);
   return (
     <div className='Notices page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Notices"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
             <div className='container'>
                 <div className='row'>

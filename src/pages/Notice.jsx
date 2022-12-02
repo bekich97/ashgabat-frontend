@@ -5,13 +5,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import noticeService from '../services/noticeService';
 import { langs } from '../langs/langs';
 import ReklamaV from '../components/ReklamaV';
+import { Helmet } from 'react-helmet';
 
 export default function Notice() {
 
     const [notice, setNotice] = useState({});
     const params = useParams();
     const lang = useSelector((state) => state.mainSlice.lang);
-    document.title = langs["Notices"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Notices"][lang] + " - " + langs["Ashgabat city municipality"][lang];
     
     const my_date = new Date(notice.pub_date);
     const months = [langs["Jan"][lang], langs["Feb"][lang], langs["Mar"][lang], langs["Apr"][lang], langs["May"][lang], langs["Jun"][lang], langs["Jul"][lang], langs["Aug"][lang], langs["Sep"][lang], langs["Oct"][lang], langs["Nov"][lang], langs["Dec"][lang]];
@@ -26,6 +27,12 @@ export default function Notice() {
 
   return (
     <div className='Notice page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Notices"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
             <div className='container'>
                 <div className='row'>

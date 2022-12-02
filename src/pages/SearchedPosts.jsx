@@ -5,13 +5,14 @@ import CategoryPostPlaceholder from '../components/CategoryPostPlaceholder';
 import { langs } from '../langs/langs';
 import { useSelector } from 'react-redux';
 import * as Icon from 'react-bootstrap-icons';
+import { Helmet } from 'react-helmet';
 
 export default function SearchedPosts() {
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const word = useSelector((state) => state.mainSlice.word);
     const lang = useSelector(state => state.mainSlice.lang);
-    document.title = langs["Search"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Search"][lang] + " - " + langs["Ashgabat city municipality"][lang];
     const [page, setPage] = useState(1);
     
     useEffect(() => {
@@ -29,11 +30,17 @@ export default function SearchedPosts() {
 
   return (
     <div className='category-posts page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Search"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
             <div className='container'>
                 <div className='row'>
                     <div className='col-12'>
-                        <span>{ langs["Home"][lang] } / {langs["News"][lang]}</span>
+                        <span>{ langs["Home"][lang] } / {langs["Search"][lang]}</span>
                     </div>
                 </div>
             </div>

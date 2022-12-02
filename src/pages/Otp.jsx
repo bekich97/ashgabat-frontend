@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setVerified } from '../stores/mainSlice';
 import ApiService from '../services/ApiService';
+import { Helmet } from 'react-helmet';
 
 export default function Otp() {
     const otp = useSelector(state => state.mainSlice.otp);
@@ -14,13 +15,13 @@ export default function Otp() {
         if (!otp) {
             navigate('/verify');
         }
-    }, []);
+    }, [navigate, otp]);
     const [answer, setAnswer] = useState("");
     const [answerError, setAnswerError] = useState("");
     const lang = useSelector(state => state.mainSlice.lang);
     const nextpath = useSelector(state => state.mainSlice.nextpath);
     const dispatch = useDispatch();
-    document.title = langs["Application formalize"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Application formalize"][lang] + " - " + langs["Ashgabat city municipality"][lang];
 
     const handleSubmit = () => {
         ApiService.checkOtp({"otp": answer}).then((res) => {
@@ -40,6 +41,12 @@ export default function Otp() {
 
   return (
     <div className='verify-page page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Application formalize"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
             <div className='container'>
                 <div className='row'>

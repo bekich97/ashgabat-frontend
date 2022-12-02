@@ -6,6 +6,7 @@ import { BACKEND_HOST } from "../consts";
 import { langs } from '../langs/langs';
 import ImageViewer from 'react-simple-image-viewer';
 import ReklamaV from '../components/ReklamaV';
+import { Helmet } from 'react-helmet';
 
 export default function Images() {
     const [currentImage, setCurrentImage] = useState(0);
@@ -15,7 +16,7 @@ export default function Images() {
     const [thumbs, setThumbs] = useState([]);
     const [imgs, setImgs] = useState([]);
     const lang = useSelector((state) => state.mainSlice.lang);
-    document.title = langs["Images"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Images"][lang] + " - " + langs["Ashgabat city municipality"][lang];
 
     useEffect(() => {
         ImageService.getImageCategories().then((res) => {
@@ -58,6 +59,12 @@ export default function Images() {
 
   return (
     <div className='Images page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Images"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
                 <div className='container'>
                     <div className='row'>

@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-modal';
 import * as Icon from 'react-bootstrap-icons';
 import ApiService from "../services/ApiService";
+import {Helmet} from 'react-helmet';
 
 Modal.setAppElement('#root');
 
@@ -30,7 +31,7 @@ export default function CheckVoucher() {
   dispatch(setNextpath('check'));
   const [modalIsOpen, setIsOpen] = useState(false);
   const lang = useSelector((state) => state.mainSlice.lang);
-  document.title = langs["Application"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+  // document.title = langs["Application"][lang] + " - " + langs["Ashgabat city municipality"][lang];
 
   const handleSubmit = () => {
     ApiService.checkCode({"code": code}).then((res) => {
@@ -46,6 +47,12 @@ export default function CheckVoucher() {
 
   return (
     <div className="verify-page page-wrapper container shadowly-border">
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Application"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
       <div className="page-title-wrapper">
         <div className="container">
           <div className="row">

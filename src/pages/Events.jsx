@@ -7,12 +7,13 @@ import { langs } from '../langs/langs';
 import CategoryPostPlaceholder from './../components/CategoryPostPlaceholder';
 import CategoryPost from './../components/CategoryPost';
 import * as Icon from 'react-bootstrap-icons';
+import { Helmet } from 'react-helmet';
 
 export default function Events() {
     const [loading, setLoading] = useState(true);
     const [events, setEvents] = useState([]);
     const lang = useSelector((state) => state.mainSlice.lang);
-    document.title = langs["Events"][lang] + " - " + langs["Ashgabat city municipality"][lang];
+    // document.title = langs["Events"][lang] + " - " + langs["Ashgabat city municipality"][lang];
     const [page, setPage] = useState(1);
 
     useEffect(() => {
@@ -30,6 +31,12 @@ export default function Events() {
 
   return (
     <div className='category-posts page-wrapper container shadowly-border'>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{langs["Events"][lang] + " - " + langs["Ashgabat city municipality"][lang]}</title>
+            <meta name="description" content={langs["Ashgabat city municipality"][lang]} />
+            <link rel="canonical" href={window.location.href} />
+        </Helmet>
         <div className='page-title-wrapper'>
             <div className='container'>
                 <div className='row'>
