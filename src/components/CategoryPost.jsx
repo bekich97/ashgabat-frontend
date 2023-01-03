@@ -13,7 +13,7 @@ const CategoryPost = ({ post, isEvent = false }) => {
                 <div className='col-md-2'>
                     <PostDate date={post.pub_date} />
                 </div>
-                <div className='col-md-6 cursor-pointer' onClick={() => navigate( isEvent ? '/events/'+post.id : '/posts/'+post.id)}>
+                <div className='col-md-6 cursor-pointer' onClick={() => navigate( isEvent ? '/events/'+post.id : '/posts/'+post.slug)}>
                     <Link to="/" className='underline-animation-on-hover'>{lang === 'en' ? post.name_en : lang === 'ru' ? post.name_ru : post.name_tm}</Link>
                     <div className='content-wrapper'>
                         <div className='content' dangerouslySetInnerHTML={{__html:(lang === 'en' ? post.description_en : lang === 'ru' ? post.description_ru : post.description_tm)}} />
@@ -21,7 +21,7 @@ const CategoryPost = ({ post, isEvent = false }) => {
                     </div>
                 </div>
                 <div className='col-md-4 d-flex justify-content-end'>
-                    <div className='img-wrapper cursor-pointer' onClick={() => navigate( isEvent ? '/events/'+post.id : '/posts/'+post.id)}>
+                    <div className='img-wrapper cursor-pointer' onClick={() => navigate( isEvent ? '/events/'+post.id : '/posts/'+post.slug)}>
                         <img src={`${BACKEND_HOST}${post.image}`} alt="1" />
                     </div>
                 </div> 

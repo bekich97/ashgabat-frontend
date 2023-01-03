@@ -40,6 +40,10 @@ class PostService {
     getPostById(postId){
         return axios.get(POST_API_BASE_URL + 'detail/' + postId);
     }
+
+    getPostBySlug(postSlug){
+        return axios.get(POST_API_BASE_URL + 'slug-detail/' + postSlug);
+    }
 }
 
 export default new PostService();

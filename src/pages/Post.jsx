@@ -22,7 +22,7 @@ export default function Post() {
     // document.title = langs["News"][lang] + " - " + langs["Ashgabat city municipality"][lang];
 
     useEffect(() => {
-        PostService.getPostById(id).then((res) => {
+        PostService.getPostBySlug(id).then((res) => {
             setPost(res.data);
         }).finally(() => {
             setLoading(false);

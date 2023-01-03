@@ -14,7 +14,7 @@ export default function PostCardWithImg({ post }) {
   return (
     <div className="col-md-4 col-sm-12 post-card-with-img">
       <div
-          onClick={() => (navigate(`/posts/${post.id}`))}
+          onClick={() => (navigate(`/posts/${post.slug}`))}
           className="img-wrapper cursor-pointer"
           style={{ backgroundColor: "rgba(0,0,0,.05)" }}
         >
@@ -25,7 +25,7 @@ export default function PostCardWithImg({ post }) {
           />
         </div>
       <div className="bottom">
-        <Link to={`/posts/${post.id}`} className="underline-animation-on-hover post-title">
+        <Link to={`/posts/${post.slug}`} className="underline-animation-on-hover post-title">
           {truncate(lang === 'en' ? post.name_en : lang === 'ru' ? post.name_ru : post.name_tm, 70)}
         </Link>
         <div className="footer-wrapper" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>

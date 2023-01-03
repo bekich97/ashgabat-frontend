@@ -12,7 +12,7 @@ export default function PostCard({ post }) {
   return (
     <div className='col-12 post-card'>
         <div className='content-wrapper'>
-            <Link to={`/posts/${post.id}`} className='underline-animation-on-hover post-title'>{truncate(lang === 'en' ? post.name_en : lang === 'ru' ? post.name_ru : post.name_tm, 70)}</Link>
+            <Link to={`/posts/${post.slug}`} className='underline-animation-on-hover post-title'>{truncate(lang === 'en' ? post.name_en : lang === 'ru' ? post.name_ru : post.name_tm, 70)}</Link>
             <div className="footer-wrapper" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
               <PostDate date={post.pub_date} />
               <div style={{color: "#999999", display: "none"}}>
